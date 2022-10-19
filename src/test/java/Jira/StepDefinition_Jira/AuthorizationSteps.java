@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static utils.Configuration.getConfigurationValue;
 
 
