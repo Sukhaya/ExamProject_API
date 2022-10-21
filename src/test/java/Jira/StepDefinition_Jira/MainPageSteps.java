@@ -7,6 +7,7 @@ import static Jira.PageElements.MainPageElements.projectsMenu;
 import static Jira.PageElements.MainPageElements.testTESTProject;
 import static Jira.PageElements.ProjectPageElements.projectSidebar;
 import static Jira.PageElements.ProjectPageElements.projectTitle;
+import static Utils.Configuration.getConfigurationValue;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
@@ -14,7 +15,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class MainPageSteps {
-    private static final String PROJECT = "Test";
 
     @When("^Открываем список проектов$")
     public void openMenuOfProjects() {
@@ -39,6 +39,6 @@ public class MainPageSteps {
     @Then("^Проверяем, что находимся в нужном проекте$")
             public void checkCurrentProject() {
         assertTrue(isProjectSidebarAppears());
-        assertEquals(PROJECT, getProjectTitle());
+        assertEquals(getConfigurationValue("PROJECT"), getProjectTitle());
     }
 }

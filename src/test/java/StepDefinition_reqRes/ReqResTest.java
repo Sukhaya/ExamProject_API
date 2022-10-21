@@ -10,14 +10,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.HashMap;
 
+import static Utils.Configuration.getConfigurationValue;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ReqResTest {
-    private static final String CREATE_USER = "/users";
-    private static final String BASE_URI = "https://reqres.in/api";
 
     @When("^Отправляем запрос и получаем ответ на соответствие$")
     public void createUser() throws IOException {
@@ -29,11 +28,11 @@ public class ReqResTest {
 
         HashMap<String, String> responseJson = given()
                     .filter(new AllureRestAssured())
-                    .baseUri(BASE_URI)
+                    .baseUri(getConfigurationValue("Uri"))
                     .contentType(ContentType.JSON)
                     .body(json.toString())
                 .when()
-                    .post(CREATE_USER)
+                    .post(getConfigurationValue("CREATE_USER"))
                 .then()
                     .statusCode(201)
                     .extract()
