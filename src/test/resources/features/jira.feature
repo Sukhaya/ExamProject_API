@@ -1,4 +1,5 @@
-@Ui
+@TEST
+  @Ui
 Feature: UI автотесты по Jira
 
   Scenario: Авторизация на тестовом портале Jira

@@ -2,9 +2,6 @@
 import Hook.WebHooks;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import io.qameta.allure.restassured.AllureRestAssured;
-import io.restassured.RestAssured;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
@@ -17,13 +14,10 @@ import org.junit.runner.RunWith;
         glue = {"Hook",
                 "Jira.StepDefinition_Jira",
                 "StepDefinition_RickAndMorty",
-                "StepDefinition_reqRes"}
+                "StepDefinition_reqRes"},
+        tags = "@TEST"
 )
 public class CucumberRunnerTest extends WebHooks {
-    @BeforeClass
-    public static void before() {
-        RestAssured.filters(new AllureRestAssured());
-    }
 }
 
 

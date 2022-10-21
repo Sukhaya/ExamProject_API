@@ -4,15 +4,15 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class WebHooks extends Configuration {
-    @BeforeAll()
+    @Before("@Ui")
     public static void setDriverFromProp() {
         Configuration.startMaximized = true;
     }
