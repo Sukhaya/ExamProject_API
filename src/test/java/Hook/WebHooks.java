@@ -12,7 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class Hooks extends Configuration {
+public class WebHooks extends Configuration {
     @Before("@Ui")
     public void openUrl() {
         open("https://edujira.ifellow.ru/secure/Dashboard.jspa");

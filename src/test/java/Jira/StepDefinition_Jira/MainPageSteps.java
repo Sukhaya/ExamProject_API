@@ -38,7 +38,6 @@ public class MainPageSteps {
 
     @Then("^Проверяем, что находимся в нужном проекте$")
             public void checkCurrentProject() {
-        assertTrue(isProjectSidebarAppears());
         assertEquals(getConfigurationValue("PROJECT"), getProjectTitle());
     }
 }

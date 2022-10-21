@@ -1,5 +1,6 @@
 package Jira.StepDefinition_Jira;
 
+import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -16,10 +17,11 @@ public class ProjectTasksSteps {
     public void openTasksPage() {
         openMenu("Задачи");
     }
+
     @Then("^Получаем количество заведенных задач$")
-    public static void getCountOfExistsTask() {
-        String taskCounter = tasksCounter.shouldBe(visible).getText();
-        System.out.println("Количество заведенных задач: " + taskCounter);
+    public static String getCountOfExistsTask() {
+        String counter = tasksCounter.shouldBe(visible).getText();
+        return tasksCounter.shouldHave(Condition.exactText(counter)).getText().substring("1 из ".length());
     }
 
 }

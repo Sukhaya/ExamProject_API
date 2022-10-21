@@ -1,4 +1,5 @@
 
+import Hook.WebHooks;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -9,12 +10,12 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm",
         "html:target/cucumber-html-reports",
         "json:target/cucumber.json"},
-        features = {"src/test/resources/features"},
+        features = {"src/test/resources/features/jira.feature"},
         glue = {"Hook",
                 "Jira.StepDefinition_Jira",
                 "StepDefinition_RickAndMorty",
                 "StepDefinition_reqRes"}
 )
-public class CucumberRunnerTest {
+public class CucumberRunnerTest extends WebHooks {
 }
 
