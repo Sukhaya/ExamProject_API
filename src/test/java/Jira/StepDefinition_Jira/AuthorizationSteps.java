@@ -8,11 +8,12 @@ import static Jira.PageElements.AuthorizationPageElements.loginButton;
 import static Jira.PageElements.AuthorizationPageElements.loginField;
 import static Jira.PageElements.AuthorizationPageElements.passwordField;
 import static Jira.PageElements.MainPageElements.userProfileIcon;
+import static Utils.Configuration.getConfigurationValue;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
-import static utils.Configuration.getConfigurationValue;
+import static org.junit.Assert.assertEquals;
 
 
 public class AuthorizationSteps {

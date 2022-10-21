@@ -8,7 +8,7 @@ import java.util.Properties;
  *  Класс для про слушивания проперти файла. с возможностью подгрузки из вне
  *  */
 public class Configuration {
-    private static final String CONFIGURATION_FILE = "/test.properties";
+    private static final String CONFIGURATION_FILE = "/application.properties";
     private static final Properties properties;
     public static boolean startMaximized;
 
@@ -27,7 +27,7 @@ public class Configuration {
         return ((System.getProperty(key) == null) ? properties.getProperty(key) : System.getProperty(key));
     }
 
-    public Configuration(){
+    public Configuration() {
 
     }
 }

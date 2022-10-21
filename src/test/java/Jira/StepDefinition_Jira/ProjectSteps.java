@@ -1,7 +1,5 @@
 package Jira.StepDefinition_Jira;
 
-
-
 import io.cucumber.java.en.When;
 
 import static Jira.PageElements.ProjectPageElements.menuButton;
