@@ -1,6 +1,6 @@
 # ExamProject_API
 Экзаменационное задание №2
-Написание автоматизированных тестов для The Rick and Morty API
+Написание автоматизированных тестов для API
 
 В тестах применены Cucumber, JUnit, Maven, Rest Assured, Allure
 
