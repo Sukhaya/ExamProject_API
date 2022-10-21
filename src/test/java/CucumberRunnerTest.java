@@ -12,7 +12,6 @@ import org.junit.runner.RunWith;
         "json:target/cucumber.json"},
         features = {"src/test/resources/features"},
         glue = {"Hook",
-                "Jira.StepDefinition_Jira",
                 "StepDefinition_RickAndMorty",
                 "StepDefinition_reqRes"},
         tags = "@TEST"
