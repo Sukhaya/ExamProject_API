@@ -1,6 +1,6 @@
 package Jira.StepDefinition_Jira;
 
-
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -13,10 +13,16 @@ import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.open;
 import static org.junit.Assert.assertEquals;
 
 
 public class AuthorizationSteps {
+    @Given("^Открываем ссылку Jira$")
+    public void openUrl() {
+        open(getConfigurationValue("jiraUrl"));
+    }
+
     @When("^Вводим логин (.*) и пароль (.*)$")
     public void authorization(String login, String password) {
         loginField.shouldBe(visible).sendKeys(login);
